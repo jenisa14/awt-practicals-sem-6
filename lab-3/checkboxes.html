@@ -1,0 +1,18 @@
+<!doctype html>
+<body>
+  <h3>Checkbox list</h3>
+  <div id="list">
+    <label><input type="checkbox" value="101">101</label>
+    <label><input type="checkbox" value="102">102</label>
+    <label><input type="checkbox" value="103">103</label>
+  </div>
+  <p>Selected: <span id="out"></span></p>
+  <script>
+    const out = document.getElementById('out');
+    document.getElementById('list').addEventListener('change', ()=>{
+      const vals = Array.from(document.querySelectorAll('#list input:checked')).map(i=>i.value);
+      out.textContent = vals.join(',');
+    });
+  </script>
+</body>
+</html>

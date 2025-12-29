@@ -1,0 +1,28 @@
+<!doctype html>
+<body>
+  <h3>let vs var</h3>
+  <div id="output"></div>
+
+  <script>
+    function write(text) {
+      document.getElementById("output")
+        .insertAdjacentHTML("beforeend", text + "<br>");
+    }
+
+    function testVar() {
+      for (var i = 0; i < 3; i++) {
+        setTimeout(() => write('var i = ' + i), 100);
+      }
+    }
+
+    function testLet() {
+      for (let j = 0; j < 3; j++) {
+        setTimeout(() => write('let j = ' + j), 100);
+      }
+    }
+
+    testVar();
+    testLet();
+  </script>
+</body>
+</html>

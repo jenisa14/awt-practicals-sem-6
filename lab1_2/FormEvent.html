@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form>
+    <input type="text" id="txt" 
+           onfocus="checkEvent(event)"
+           onchange="checkEvent(event)"
+           onblur="checkEvent(event)" 
+           placeholder="Type something here to check which event is fired">
+
+    <br><br>
+
+    <button onclick="checkEvent(event)">Submit</button>
+</form>
+
+<script>
+function checkEvent(e) {
+    alert("Event Fired: " + e.type);
+    
+}
+</script>
+
+</body>
+</html>

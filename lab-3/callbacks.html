@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<body>
+  <h3>Callback demo — greeter</h3>
+  <script>
+    function greet(name, cb) {
+      const message = `Hello, ${name}!`;
+      cb(message);
+    }
+
+    function show(msg) {
+      document.body.insertAdjacentHTML('beforeend', `<p>${msg}</p>`);
+    }
+
+    greet('Alice', show);
+  </script>
+</body>
+</html>

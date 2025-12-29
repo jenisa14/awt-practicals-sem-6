@@ -1,0 +1,13 @@
+<!doctype html>
+<body>
+  <h3>Spread operator</h3>
+  <script>
+    const a = [1,2,3];
+    const b = [...a,4,5];
+    const obj1 = {x:1};
+    const obj2 = {...obj1, y:2};
+    document.body.append(JSON.stringify(b), document.createElement('br'));
+    document.body.append(JSON.stringify(obj2));
+  </script>
+</body>
+</html>

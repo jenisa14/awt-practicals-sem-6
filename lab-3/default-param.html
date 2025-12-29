@@ -1,0 +1,12 @@
+<!doctype html>
+<body>
+  <h3>Default parameter</h3>
+  <script>
+    function increment(n = 1) {
+      return n + 1;
+    }
+    document.body.append(`${increment()}`, document.createElement('br'));
+    document.body.append(`${increment(5)}`);
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!doctype html>
+<body>
+  <h3>Class example</h3>
+  <script>
+    class Student {
+      constructor(id, name) {
+        this.id = id;
+        this.name = name;
+      }
+      greet() {
+        return `Hi, I'm ${this.name} (#${this.id})`;
+      }
+    }
+
+    const s = new Student(1, 'Amy');
+    document.body.append(s.greet());
+  </script>
+</body>
+</html>

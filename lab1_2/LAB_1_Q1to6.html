@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+            //1. WAP in JavaScript to check whether the given no. is prime or not.
+
+        // let num1,count=0;
+        // num1 = parseInt(prompt("Enter a number"));
+
+        // for (let i = 1; i <= num1; i++) {
+
+        //     if (num1 % i == 0) {
+        //         count++;
+        //     }
+        // }
+        // if(count==2){
+
+        //     alert("number is prime")
+        // }
+        // else{
+        //     alert("number is not prime")
+        // }
+
+        //2.print prime numbers between given range.
+
+        
+//           function isPrime(number) {
+//            if (number <= 1) return false;
+
+//         for (let i = 2; i < number; i++) {
+//         if (number % i === 0) {
+//              return false;
+//     }
+//   }
+//          return true;
+// }
+
+//         let start = parseInt(prompt("Enter first number: "));
+//         let end = parseInt(prompt("Enter second number: "));
+
+//         let result = "";
+
+//       for (let i = start; i <= end; i++) {
+//       if (isPrime(i)) {
+//       result += i + " ";
+//   }
+// }
+
+//       alert("Prime numbers: " + result);
+
+
+        //3.WAP  to print FACTORS OF NUMBER
+        // let num = parseInt(prompt("Enter a number : "));
+        // let factors = [];
+        // for (let i = 1; i <= num; i++) {
+        //   if (num % i === 0) {
+        //     factors.push(i);
+        //   }
+        // }
+        // alert(factors);
+
+        //4.wap to implement basic calculator features,take input using prompt function
+
+        //      let num1, num2, choice;
+        // num1 = parseInt(prompt("Enter 1st Number"));
+        // num2 = parseInt(prompt("Enter 2nd Number"));
+        // choice = prompt("Enter choice (+,-,*,/)");
+        // switch (choice) {
+        //     case "+":
+        //         alert(num1 + num2)
+        //         break;
+        //     case "-":
+        //         alert(num1 - num2)
+        //         break;
+        //     case "*":
+        //         alert(num1 * num2)
+        //         break;
+        //     case "/":
+        //         alert(num1 / num2)
+        //         break;
+        //     default:
+        //         alert("please enter only +,-,*,/");
+        //         break;
+        // }
+        
+        //5.wap to convert celsius into feranhit.
+        
+        // let celsius = parseFloat(prompt("Enter temperature in Celsius:"));
+        // let fahrenheit = (celsius * 9 / 5) + 32;
+
+        // alert(celsius + "°C = " + fahrenheit.toFixed(2) + "°F");
+
+
+
+
+        //6.            5
+        //           5     4
+        //        5     4     3  
+        //      5     4     3    2
+        //    5     4     3    2    1
+    
+
+         
+  //  let rows = parseInt(prompt("Enter number of rows: "));
+
+  //   for (let i = 1; i <= rows; i++) {
+  //       let pattern = "";
+
+  //       // Spaces for triangle shape
+  //       for (let space = rows; space > i; space--) {
+  //           pattern += "&nbsp;&nbsp;";
+  //       }
+
+  //       // Numbers printing
+  //       for (let num = rows; num >= rows - i + 1; num--) {
+  //           pattern += num + "&nbsp;";
+  //       }
+
+  //       document.write(pattern + "<br>");
+  //   }
+
+
+    //6.      *     *     *     *       *
+      //        @      @     @      @
+      //           *      *     *
+      //               @     @
+       //                 *
+
+
+        let rows = parseInt(prompt("Enter number of rows (suggested: 5):"));
+
+    for (let i = 1; i <= rows; i++) {
+        let pattern = "";
+
+        // Print spaces
+        for (let s = 1; s < i; s++) {
+            pattern += "&nbsp;&nbsp;";
+        }
+
+        // Print character
+        for (let j = 1; j <= (rows - i + 1); j++) {
+            if (i % 2 === 1) {
+                pattern += "*";
+            } else {
+                pattern += "@";
+            }
+        }
+
+        document.write(pattern + "<br>");
+    }
+
+    
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Student Registration Form</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url("picc.jpg"); /* Change to your image path */
+    background-size: cover; /* Full screen */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+#calc {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; 
+}
+
+#content {
+    /* RESTORED: Original white background with gradient */
+    background: #ffffff; 
+    background-image: linear-gradient(to bottom right, #E6E6FA, #ADD8E6);
+    
+    padding: 30px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 400px;
+    /* RESTORED: Original box shadow */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #444; 
+    font-size: 24px;
+    font-weight: 600;
+}
+
+label {
+    font-family: inherit; 
+    font-weight: 500;
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 14px;
+}
+
+input, select {
+    width: 100%;
+    height: 48px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 0 15px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #79a6d2;
+    box-shadow: 0 0 0 3px rgba(121, 166, 210, 0.2);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #6a9cff; 
+    color: white;
+    transition: background-color 0.3s ease, transform 0.1s;
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+}
+
+button:hover {
+    background-color: #4b80e6; 
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+#errorMsg {
+    color: #cc0000; 
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 15px;
+}
+</style>
+
+</head>
+<body>
+
+<div id="calc">
+    <div id="content">
+        
+        <h2>Student Registration</h2>
+        <div id="errorMsg"></div>
+
+        <form id="regForm">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Enter full name">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter email address">
+
+            <label for="mobile">Mobile</label>
+            <input type="tel" id="mobile" maxlength="10" placeholder="Enter 10-digit number">
+
+            <label for="course">Course</label>
+            <select id="course">
+                <option value="" disabled selected>Select Course</option>
+                <option value="BCA">BCA</option>
+                <option value="BBA">BBA</option>
+                <option value="B.Sc">B.Sc</option>
+                <option value="B.Com">B.Com</option>
+                <option value="B.Tech">B.Tech</option>
+            </select>
+
+            <button type="button" onclick="validateForm()">Register</button>
+        </form>
+    </div>
+</div>
+
+<script>
+function validateForm() {
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let mobile = document.getElementById("mobile").value.trim();
+    let course = document.getElementById("course").value;
+    let error = "";
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+
+    if (name === "") {
+        error = "Please enter your Name";
+    } 
+    else if (email === "" || !emailPattern.test(email)) {
+        error = "Enter a valid Email address";
+    } 
+    else if (mobile === "" || isNaN(mobile) || mobile.length !== 10) {
+        error = "Enter a valid 10-digit Mobile number";
+    } 
+    else if (course === "") {
+        error = "Please select a Course";
+    }
+
+    let msg = document.getElementById("errorMsg");
+    
+    if (error !== "") {
+        msg.style.color = "#cc0000"; 
+        msg.innerText = error;
+    } else {
+        msg.style.color = "green";
+        msg.innerText = "Registration Successful! Thank you.";
+    }
+}
+</script>
+
+</body>
+</html>

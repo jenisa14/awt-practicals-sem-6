@@ -1,0 +1,13 @@
+<!doctype html>
+<body>
+  <h3>Destructuring</h3>
+  <script>
+    const arr = [1,2,3];
+    const [first, , third] = arr;
+    const obj = {name:'Bob', age:22};
+    const {name, age} = obj;
+    document.body.append(`first=${first}, third=${third}`, document.createElement('br'));
+    document.body.append(`name=${name}, age=${age}`);
+  </script>
+</body>
+</html>

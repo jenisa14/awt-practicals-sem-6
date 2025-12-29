@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change Properties Demo</title>
+</head>
+<body>
+
+    <h2 id="heading">Hello, This is Original Text!</h2>
+
+    <button onclick="changeProperties()">Change Properties</button>
+    <button onclick ="Reset()" type="Reset">Reset</button>
+
+    <script>
+        function changeProperties() {
+            var h = document.getElementById("heading");
+
+            h.innerHTML = "Text is Changed!";
+
+            h.style.color = "white";
+
+            h.style.fontSize = "30px";
+
+            h.style.backgroundColor = "gray";
+
+            h.style.border = "2px solid red";
+
+            h.style.padding = "10px";
+        }
+
+       
+    </script>
+
+</body>
+</html>

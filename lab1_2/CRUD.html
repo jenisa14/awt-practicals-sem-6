@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple CRUD Using JavaScript Array</title>
+</head>
+
+<body>
+
+<h2>Simple CRUD Example</h2>
+
+<input type="text" id="txtItem" placeholder="Enter array elements:">
+<button onclick="addItem()">Add</button>
+
+<h3>Item List</h3>
+<ul id="itemList"></ul>
+
+<script>
+    let items = [];  
+
+    function display() {
+        let list = "";
+        items.forEach((item, index) => {
+            list += `
+                <li>
+                    ${item} 
+                    <button onclick="editItem(${index})">Edit</button>
+                    <button onclick="deleteItem(${index})">Delete</button>
+                </li>
+            `;
+        });
+        document.getElementById("itemList").innerHTML = list;
+    }
+
+    function addItem() {
+        let value = document.getElementById("txtItem").value;
+
+        if (value === "") {
+            alert("Please enter element!");
+            return;
+        }
+
+        items.push(value); 
+        document.getElementById("txtItem").value = "";
+        display();
+    }
+
+    function deleteItem(index) {
+        items.splice(index, 1);   
+        display();
+    }
+
+    function editItem(index) {
+        let newValue = prompt("Enter new value:", items[index]);
+
+        if (newValue !== null && newValue !== "") {
+            items[index] = newValue;   
+            display();
+        }
+    }
+
+    
+    display();
+</script>
+
+</body>
+</html>

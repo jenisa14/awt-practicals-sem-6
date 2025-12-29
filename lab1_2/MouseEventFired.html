@@ -1,0 +1,52 @@
+<!-- <doctype html>
+<html>
+    <head>
+        <title>Mouse Event</title>
+    </head>
+<body>
+    <script>
+            function mouseEventFired(event){
+            alert("Mouse Event Fired");
+    }
+    </script>
+
+
+<button onmouseover="mouseEventFired(event)">Click here to see pop up</button>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3 id="box" style="padding:20px; border:1px solid black; width:200px;">
+    Move or Click Here
+</h3>
+
+<p id="msg"></p>
+
+<script>
+let box = document.getElementById("box");
+let msg = document.getElementById("msg");
+
+box.addEventListener("mouseover", function() {
+    msg.innerHTML = "Mouse Over event fired";
+});
+
+
+box.addEventListener("mouseout", function() {
+    msg.innerHTML = "Mouse Out event fired";
+});
+
+box.addEventListener("click", function() {
+    msg.innerHTML = "Mouse Click event fired";
+});
+
+box.addEventListener("dblclick", function() {
+    msg.innerHTML = "Double Click event fired";
+});
+</script>
+
+</body>
+</html>

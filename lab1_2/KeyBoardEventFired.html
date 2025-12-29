@@ -1,0 +1,62 @@
+<!-- <html>
+    <head>
+        <title>Keyboard Event</title>
+    </head>
+<body>
+
+    <script>
+            function keyBoardEventFired(event){
+
+                if(id == "k1"){
+
+                    alert("Keyboard onkeydown Event Fired");
+
+
+                }
+                if(id == "k2"){
+                    alert("Keyboard onkeyup Event Fired")
+                }  
+                if(id == "k3"){
+
+                    alert("Keyboard onkeypress Event Fired")
+                } 
+    </script>
+
+
+<input id= "k1" type="text" onkeydown="keyBoardEventFired(event)" placeholder="Enter text here">
+<input id = "k2" type="text" onkeyup="keyBoardEventFired(event)" placeholder="Enter text here">
+<input id = "k3" type="text" onkeypress="keyBoardEventFired(event)">  </input>
+</body>
+</html>
+
+
+
+ -->
+
+
+ <!DOCTYPE html>
+<html>
+<body>
+
+<input type="text" id="box" placeholder="Type here">
+<p id="msg"></p>
+
+<script>
+let box = document.getElementById("box");
+let msg = document.getElementById("msg");
+
+box.addEventListener("keydown", function() {
+    msg.innerHTML = "keydown fired";
+});
+
+box.addEventListener("keypress", function() {
+    msg.innerHTML = "keypress fired";
+});
+
+box.addEventListener("keyup", function() {
+    msg.innerHTML = "keyup fired";
+});
+</script>
+
+</body>
+</html>
