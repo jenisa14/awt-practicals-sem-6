@@ -1,8 +1,8 @@
 "use server";
 
-import { prisma } from "../lib/prisma";
-import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
+import { prisma } from "@/app/lib/prisma";
+import { redirect } from "next/navigation";
 
 export async function UpdateUserAction(formData: FormData) {
   const UserID = Number(formData.get("UserID"));
